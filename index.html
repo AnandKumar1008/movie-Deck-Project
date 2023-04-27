@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Movie Deck</title>
+</head>
+
+<body onload="fetchData()">
+    <header>
+        <h1>Movie Deck</h1>
+        <div>
+            <form class="form-inline">
+                <input type="text" class="form-control" name="movie" placeholder="Search by name"
+                    oninput="searchMovies(this)">
+                <select name="rating-release" class="form-control" onchange="sortMovies(this)">
+                    <option value="rating-desc">rating-desc</option>
+                    <option value="rating-asc">rating-asc</option>
+                    <option value="release-desc">release-desc</option>
+                    <option value="release-asc">release-asc</option>
+                </select>
+            </form>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#all-movies">All Movies</a></li>
+                <li><a data-toggle="tab" href="#favorites">Favorites</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="all-movies">
+                    <div id="all-movies-grid" class="card-grid"></div>
+                </div>
+                <div class="tab-pane fade" id="favorites">
+                    <div id="favorite-grid" class="card-grid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        copyright &copy; 2023 Movie Deck
+    </footer>
+    <script src="index.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
